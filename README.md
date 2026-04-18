@@ -16,6 +16,7 @@ Song Clipper provides a simple, dark-themed interface for trimming MP3 files. Ju
 ✅ **Simple Workflow** - Select timestamps → Click Extract → Done  
 ✅ **Self-Contained** - No system Python installation required  
 ✅ **Auto-Naming** - Output files saved next to source with descriptive names  
+✅ **Privacy First** - Collects no user data, zero telemetry, no network calls ever
 
 ## Quick Start
 
