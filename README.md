@@ -2,6 +2,12 @@
 
 A lightweight, completely **offline** Windows desktop app that lets you extract precise segments from MP3 files.
 
+## Overview
+
+![Song Clipper UI](screenshots/ui-screenshot.png)
+
+Song Clipper provides a simple, dark-themed interface for trimming MP3 files. Just drop your audio file, set start and end timestamps, and click Extract. The clipped segment is automatically saved next to the original with a descriptive filename.
+
 ## Features
 
 ✅ **Completely Offline** - No internet required  
