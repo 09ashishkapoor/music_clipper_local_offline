@@ -41,6 +41,11 @@ runtime/
 tools/ffmpeg/ffmpeg.exe
 tools/ffmpeg/ffprobe.exe
 
+# PyInstaller build output
+build/
+dist/
+*.spec.bak
+
 # OS files
 *.log
 .env

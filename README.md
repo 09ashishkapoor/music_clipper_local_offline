@@ -156,6 +156,26 @@ The app gracefully handles common issues:
 - ❌ Timestamps out of range → Validates against file duration
 - ❌ Missing FFmpeg → Clear error dialog with setup instructions
 
+## Packaging
+
+### Build a Standalone `.exe`
+
+Run the included build script to create a self-contained Windows executable using PyInstaller. No Python installation needed on the target machine.
+
+```bash
+build.bat
+```
+
+Or manually:
+```bash
+pip install pyinstaller
+pyinstaller song_clipper.spec --clean --noconfirm
+```
+
+Output is in `dist/SongClipper/SongClipper.exe`. Distribute the **entire `dist/SongClipper/` folder** — users double-click `SongClipper.exe` and it runs without Python installed.
+
+> **Note:** FFmpeg must still be available (system PATH or placed in `tools/ffmpeg/` next to the `.exe`)
+
 ## Deployment
 
 ### For End Users
