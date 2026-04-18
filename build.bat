@@ -22,7 +22,7 @@ if %ERRORLEVEL% neq 0 (
 )
 
 :: Install / verify PyInstaller
-echo [1/3] Checking PyInstaller...
+echo [1/4] Checking PyInstaller...
 %PYTHON% -m pip show pyinstaller >nul 2>nul
 if %ERRORLEVEL% neq 0 (
     echo Installing PyInstaller...
@@ -30,24 +30,52 @@ if %ERRORLEVEL% neq 0 (
 )
 
 :: Install app dependencies
-echo [2/3] Installing dependencies...
+echo [2/4] Installing dependencies...
 %PYTHON% -m pip install -r requirements.txt
 
 :: Run PyInstaller
-echo [3/3] Building executable...
+echo [3/4] Building executable...
 %PYTHON% -m PyInstaller song_clipper.spec --clean --noconfirm
 
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] PyInstaller build failed.
+    pause
+    exit /b 1
+)
+
 echo.
-if %ERRORLEVEL% equ 0 (
-    echo ============================================
-    echo  BUILD SUCCESSFUL!
-    echo  Output: dist\SongClipper\SongClipper.exe
-    echo ============================================
-    echo.
-    echo To distribute, copy the entire dist\SongClipper\ folder.
-    echo Users also need FFmpeg in PATH or in tools\ffmpeg\
+echo ============================================
+echo  EXE BUILD SUCCESSFUL!
+echo  Output: dist\SongClipper\SongClipper.exe
+echo ============================================
+echo.
+
+:: Optional: Build Inno Setup installer
+echo [4/4] Checking for Inno Setup...
+
+:: Check common install locations
+set "ISCC="
+if exist "%LOCALAPPDATA%\Programs\Inno Setup 6\iscc.exe" set "ISCC=%LOCALAPPDATA%\Programs\Inno Setup 6\iscc.exe"
+if exist "%ProgramFiles(x86)%\Inno Setup 6\iscc.exe" set "ISCC=%ProgramFiles(x86)%\Inno Setup 6\iscc.exe"
+if exist "%ProgramFiles%\Inno Setup 6\iscc.exe" set "ISCC=%ProgramFiles%\Inno Setup 6\iscc.exe"
+where iscc >nul 2>nul && set "ISCC=iscc"
+
+if defined ISCC (
+    echo Building installer with Inno Setup...
+    "%ISCC%" installer.iss
+    if not errorlevel 1 (
+        echo.
+        echo ============================================
+        echo  INSTALLER BUILD SUCCESSFUL!
+        echo  Output: installer_output\SongClipper-Setup-v1.0.0.exe
+        echo ============================================
+    ) else (
+        echo [WARN] Installer build failed, but EXE is still available.
+    )
 ) else (
-    echo [ERROR] Build failed. Check the output above for details.
+    echo [INFO] Inno Setup not found - skipping installer build.
+    echo        Install from: https://jrsoftware.org/isinfo.php
+    echo        Or via WinGet: winget install JRSoftware.InnoSetup
 )
 
 echo.

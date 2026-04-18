@@ -46,6 +46,9 @@ build/
 dist/
 *.spec.bak
 
+# Inno Setup installer output
+installer_output/
+
 # OS files
 *.log
 .env

@@ -176,6 +176,33 @@ Output is in `dist/SongClipper/SongClipper.exe`. Distribute the **entire `dist/S
 
 > **Note:** FFmpeg must still be available (system PATH or placed in `tools/ffmpeg/` next to the `.exe`)
 
+### Build a Windows Installer (`.exe` Setup Wizard)
+
+An [Inno Setup](https://jrsoftware.org/isinfo.php) script is included to produce a polished `SongClipper-Setup.exe` installer with:
+
+- Start Menu shortcut
+- Optional Desktop shortcut  
+- Uninstaller entry in Add/Remove Programs
+- Post-install FFmpeg detection with helpful guidance
+
+**Prerequisites:**
+```bash
+winget install JRSoftware.InnoSetup
+```
+
+**Build the installer** (runs automatically inside `build.bat` if Inno Setup is detected):
+```bash
+iscc installer.iss
+```
+
+Output: `installer_output/SongClipper-Setup-v1.0.0.exe`
+
+| Distribution format | What users get | Requires Python | Requires FFmpeg |
+|---|---|---|---|
+| Source | `.bat` launcher | Yes | Yes |
+| PyInstaller folder | `SongClipper.exe` + folder | No | Yes |
+| Inno Setup installer | `Setup.exe` wizard | No | Yes (auto-detected) |
+
 ## Deployment
 
 ### For End Users
