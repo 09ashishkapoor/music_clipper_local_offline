@@ -1,0 +1,23 @@
+# Python Dependencies
+# Install with: pip install -r requirements.txt
+
+tkinterdnd2-universal
+
+# ============================================================================
+# SYSTEM DEPENDENCIES (NOT pip packages - must be installed separately):
+# ============================================================================
+#
+# REQUIRED: FFmpeg
+#   - Audio processing engine for MP3 cutting
+#   - Download: https://ffmpeg.org/download.html
+#   - Or via WinGet: winget install Gyan.FFmpeg
+#   - App auto-detects if installed in PATH or in tools/ffmpeg/ directory
+#   - Binaries needed: ffmpeg.exe, ffprobe.exe
+#
+# REQUIRED: Python 3.8+
+#   - Download: https://www.python.org/downloads/
+#   - Or via WinGet: winget install Python.Python.3.12
+#   - Or use embedded runtime in runtime/ directory (optional)
+#
+# ============================================================================
+

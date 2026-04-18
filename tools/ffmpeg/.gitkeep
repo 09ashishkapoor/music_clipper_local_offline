@@ -1,0 +1,4 @@
+# Place ffmpeg.exe and ffprobe.exe binaries here
+# Download from: https://ffmpeg.org/download.html or use WinGet: winget install Gyan.FFmpeg
+# 
+# If system FFmpeg is installed and in PATH, the app will use that automatically.
