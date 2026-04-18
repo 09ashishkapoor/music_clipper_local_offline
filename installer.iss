@@ -6,7 +6,7 @@
 #define AppName "Song Clipper"
 #define AppVersion "1.0.0"
 #define AppPublisher "Song Clipper"
-#define AppURL "https://github.com/yourusername/music_clipper_local_offline"
+#define AppURL "https://github.com/09ashishkapoor/music_clipper_local_offline"
 #define AppExeName "SongClipper.exe"
 #define SourceDir "dist\SongClipper"
 

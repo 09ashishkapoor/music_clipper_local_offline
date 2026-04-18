@@ -28,7 +28,7 @@ Song Clipper provides a simple, dark-themed interface for trimming MP3 files. Ju
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/music_clipper_local_offline.git
+   git clone https://github.com/09ashishkapoor/music_clipper_local_offline.git
    cd music_clipper_local_offline
    ```
 
