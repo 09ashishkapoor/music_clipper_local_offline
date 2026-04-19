@@ -1,12 +1,14 @@
 # Song Clipper 🎵
 
-A lightweight, completely **offline** Windows desktop app that lets you extract precise segments from MP3 files.
+A lightweight, completely **offline** Windows desktop app for MP3 workflows: clipping segments and creating looped tracks.
 
 ## Overview
 
-![Song Clipper UI](screenshots/ui-screenshot.png)
+![Song Clipper UI (Clip)](screenshots/ui-screenshot1.png)
 
-Song Clipper provides a simple, dark-themed interface for trimming MP3 files. Just drop your audio file, set start and end timestamps, and click Extract. The clipped segment is automatically saved next to the original with a descriptive filename.
+![Song Clipper UI (Loop)](screenshots/ui-screenshot2.png)
+
+Song Clipper provides a simple, dark-themed interface for MP3 workflows. Drop your audio file, then use one of the built-in workflows to generate an output file saved next to the original with a descriptive filename.
 
 ## Features
 
@@ -17,6 +19,9 @@ Song Clipper provides a simple, dark-themed interface for trimming MP3 files. Ju
 ✅ **Self-Contained** - No system Python installation required  
 ✅ **Auto-Naming** - Output files saved next to source with descriptive names  
 ✅ **Privacy First** - Collects no user data, zero telemetry, no network calls ever
+
+New in v2:
+- Loop workflow: repeat an MP3 N times into a single output file (saved next to the source as `<name>-loopxN.mp3`).
 
 ## Quick Start
 
@@ -75,6 +80,19 @@ Song Clipper provides a simple, dark-themed interface for trimming MP3 files. Ju
 **Output file:** `meditation-track-00-30-to-01-10.mp3`
 
 If the output already exists, a number is appended: `meditation-track-00-30-to-01-10-1.mp3`
+
+### Loop workflow
+
+1. Switch to the **Loop** tab
+2. **Drop** an MP3 file into the drop zone (or click "Browse MP3")
+3. **Enter Loops** (whole number, `>= 1`)
+4. **Click Create Loops** - The looped file is saved next to the original
+
+### Loop example
+
+**Input file:** `meditation-track.mp3`  
+**Loops:** `5`  
+**Output file:** `meditation-track-loopx5.mp3`
 
 ## Project Structure
 
@@ -151,6 +169,8 @@ See `requirements.txt` for details.
 
 The app gracefully handles common issues:
 
+It also validates the loop count in the Loop tab (must be a whole number `>= 1`).
+
 - ❌ Non-MP3 files → Shows error message
 - ❌ Multiple file drops → Shows error message  
 - ❌ Invalid timestamp format → Blocks extraction with feedback
@@ -196,7 +216,7 @@ winget install JRSoftware.InnoSetup
 iscc installer.iss
 ```
 
-Output: `installer_output/SongClipper-Setup-v1.0.0.exe`
+Output: `installer_output/SongClipper-Setup-v2.0.0.exe`
 
 | Distribution format | What users get | Requires Python | Requires FFmpeg |
 |---|---|---|---|

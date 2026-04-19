@@ -67,7 +67,7 @@ if defined ISCC (
         echo.
         echo ============================================
         echo  INSTALLER BUILD SUCCESSFUL!
-        echo  Output: installer_output\SongClipper-Setup-v1.0.0.exe
+        echo  Output: installer_output\SongClipper-Setup-v2.0.0.exe
         echo ============================================
     ) else (
         echo [WARN] Installer build failed, but EXE is still available.

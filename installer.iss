@@ -4,7 +4,7 @@
 ; Or double-click installer.iss if Inno Setup is installed
 
 #define AppName "Song Clipper"
-#define AppVersion "1.0.0"
+#define AppVersion "2.0.0"
 #define AppPublisher "Song Clipper"
 #define AppURL "https://github.com/09ashishkapoor/music_clipper_local_offline"
 #define AppExeName "SongClipper.exe"

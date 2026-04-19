@@ -19,3 +19,16 @@ def validate_range(start_secs, end_secs, total_duration):
     if total_duration and end_secs > total_duration:
         return False, f"End time exceeds file duration ({total_duration:.2f}s)."
     return True, ""
+
+
+def parse_positive_int(value_str, min_value=1):
+    """Parse a positive integer from a string. Returns int or None."""
+    try:
+        value = int(str(value_str).strip())
+    except Exception:
+        return None
+
+    if value < min_value:
+        return None
+
+    return value
