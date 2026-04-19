@@ -52,3 +52,4 @@ installer_output/
 # OS files
 *.log
 .env
+AGENTS.md
