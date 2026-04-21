@@ -4,6 +4,11 @@ Offline Windows desktop app for cutting MP3 clips and creating repeated loop tra
 
 If you are searching for an offline MP3 cutter, MP3 clipper, audio trimmer, MP3 loop maker, or a simple FFmpeg GUI for Windows, this repository is built for that workflow.
 
+[![Latest release](https://img.shields.io/github/v/release/09ashishkapoor/music_clipper_local_offline?label=latest%20release)](https://github.com/09ashishkapoor/music_clipper_local_offline/releases)
+[![Get installer](https://img.shields.io/badge/get-installer-2ea44f)](https://github.com/09ashishkapoor/music_clipper_local_offline/releases/latest)
+
+Download the latest Windows installer: <https://github.com/09ashishkapoor/music_clipper_local_offline/releases/latest>
+
 ![Song Clipper clip workflow](screenshots/ui-screenshot1.png)
 ![Song Clipper loop workflow](screenshots/ui-screenshot2.png)
 
@@ -41,6 +46,13 @@ Everything runs locally on Windows. There is no upload step, no cloud dependency
 - FFmpeg available either:
   - in your system `PATH`, or
   - in `tools/ffmpeg/` as `ffmpeg.exe` and `ffprobe.exe`
+
+### Fastest Install Path
+
+1. Open the latest release page.
+2. Download the Windows installer attached to that release.
+3. Install FFmpeg with `winget install Gyan.FFmpeg` if it is not already installed.
+4. Launch Song Clipper from Start Menu or the installed app shortcut.
 
 ### Run From Source
 
