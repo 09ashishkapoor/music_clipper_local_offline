@@ -9,6 +9,8 @@ If you are searching for an offline MP3 cutter, MP3 clipper, audio trimmer, MP3 
 
 Download the latest Windows installer: <https://github.com/09ashishkapoor/music_clipper_local_offline/releases/latest>
 
+![Song Clipper social preview](screenshots/github-social-preview.jpg)
+
 ![Song Clipper clip workflow](screenshots/ui-screenshot1.png)
 ![Song Clipper loop workflow](screenshots/ui-screenshot2.png)
 
